@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>am Notepads</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">am</div>
+    <nav>
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Small Notepads. Big Ideas.</h1>
+    <p>Minimal • Colourful • Affordable</p>
+    <a class="hero-btn" href="#products">Shop Now</a>
+</section>
+
+<section id="products" class="products">
+    <h2>Our Products</h2>
+
+    <div class="product-grid">
+
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200" alt="Single Notepad">
+            <h3>Single Notepad</h3>
+            <p class="price">₹40</p>
+            <button onclick="addToCart('Single Notepad',40)">Add to Cart</button>
+        </div>
+
+        <div class="product-card featured">
+            <img src="https://via.placeholder.com/200" alt="Set of 3 Notepads">
+            <h3>Set of 3 Notepads</h3>
+            <p class="price">₹100</p>
+            <button onclick="addToCart('Set of 3 Notepads',100)">Add to Cart</button>
+        </div>
+
+    </div>
+</section>
+
+<section class="cart">
+    <h2>Your Cart</h2>
+    <ul id="cart-items"></ul>
+    <p class="total">Total: ₹<span id="total">0</span></p>
+
+    <a id="whatsapp-order" class="buy-btn" target="_blank">
+        Place Order on WhatsApp
+    </a>
+</section>
+
+<section id="about" class="about">
+    <h2>About am</h2>
+    <p>am is a minimalist stationery brand creating compact, colourful notepads for everyday ideas.</p>
+</section>
+
+<footer id="contact">
+    <p>© 2025 am stationery</p>
+</footer>
+
+<script>
+let cart = [];
+let total = 0;
+
+function addToCart(name, price) {
+    cart.push({name, price});
+    total += price;
+
+    document.getElementById("total").innerText = total;
+
+    const li = document.createElement("li");
+    li.innerText = name + " - ₹" + price;
+    document.getElementById("cart-items").appendChild(li);
+
+    updateWhatsAppLink();
+}
+
+function updateWhatsAppLink() {
+    let message = "Hi, I want to order:%0A";
+    cart.forEach(item => {
+        message += item.name + " - ₹" + item.price + "%0A";
+    });
+    message += "Total: ₹" + total;
+
+    document.getElementById("whatsapp-order").href =
+        "https://wa.me/91XXXXXXXXXX?text=" + message;
+}
+</script>
+
+</body>
+</html>

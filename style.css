@@ -1,0 +1,22 @@
+* { margin:0; padding:0; box-sizing:border-box; font-family:Arial,sans-serif; }
+body { line-height:1.6; }
+header { display:flex; justify-content:space-between; align-items:center; padding:15px 30px; border-bottom:1px solid #eee; }
+.logo { font-size:28px; font-weight:bold; color:red; }
+nav a { margin-left:15px; text-decoration:none; color:#333; }
+.hero { text-align:center; padding:60px 20px; background:#fafafa; }
+.hero h1 { font-size:34px; }
+.hero-btn { display:inline-block; margin-top:20px; padding:12px 25px; background:red; color:white; text-decoration:none; }
+.products { padding:50px 20px; }
+.products h2 { text-align:center; margin-bottom:40px; }
+.product-grid { display:flex; gap:25px; justify-content:center; flex-wrap:wrap; }
+.product-card { border:1px solid #ddd; padding:20px; width:260px; text-align:center; }
+.product-card img { width:100%; margin-bottom:15px; }
+.price { color:red; font-size:22px; margin:10px 0; }
+button, .buy-btn { display:block; margin-top:15px; padding:10px; background:red; color:white; border:none; text-decoration:none; cursor:pointer; }
+.featured { border:2px solid red; }
+.cart { padding:40px 20px; background:#fafafa; text-align:center; }
+.cart ul { list-style:none; }
+.total { font-size:20px; margin-top:10px; }
+.about { padding:40px 20px; text-align:center; }
+footer { text-align:center; padding:20px; border-top:1px solid #eee; }
+@media(max-width:600px){ nav{display:none;} .hero h1{font-size:26px;} }
